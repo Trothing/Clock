@@ -1,0 +1,55 @@
+src/
+├── config/
+│   ├── env.ts              # зчитування і валідація .env (через zod)
+│   └── db.ts                # ініціалізація Drizzle + pg-конекшн
+│
+├── db/
+│   ├── schema/
+│   │   ├── users.schema.ts
+│   │   ├── chats.schema.ts
+│   │   ├── chatMembers.schema.ts
+│   │   └── messages.schema.ts
+│   └── migrations/          # згенеровано drizzle-kit
+│
+├── modules/
+│   ├── auth/
+│   │   ├── auth.controller.ts    # register, login — приймає req/res
+│   │   ├── auth.service.ts       # бізнес-логіка: хешування, генерація JWT
+│   │   ├── auth.routes.ts        # POST /auth/register, /auth/login
+│   │   ├── auth.dto.ts           # zod-схеми вхідних даних
+│   │   └── auth.middleware.ts    # перевірка JWT (і для REST, і використовується в WS)
+│   │
+│   ├── users/
+│   │   ├── users.controller.ts
+│   │   ├── users.service.ts      # пошук юзерів, отримати профіль
+│   │   ├── users.routes.ts
+│   │   └── users.dto.ts
+│   │
+│   ├── chats/
+│   │   ├── chats.controller.ts   # створити чат, список моїх чатів
+│   │   ├── chats.service.ts      # перевірка прав доступу до чату теж тут
+│   │   ├── chats.routes.ts
+│   │   └── chats.dto.ts
+│   │
+│   └── messages/
+│       ├── messages.controller.ts # REST: отримати історію (пагінація)
+│       ├── messages.service.ts    # створити повідомлення в БД — викликається і з REST, і з WS
+│       ├── messages.routes.ts
+│       └── messages.dto.ts        # zod-схема і для REST body, і для WS-подій
+│
+├── ws/
+│   ├── socket.server.ts      # ініціалізація socket.io, підключення до http-сервера
+│   ├── socket.auth.ts        # middleware для перевірки JWT на handshake
+│   ├── connection.registry.ts # Map<userId, Set<socketId>> — хто онлайн і на яких сокетах
+│   ├── handlers/
+│   │   ├── message.handler.ts   # подія "message:send" → викликає messages.service
+│   │   └── presence.handler.ts  # подія connect/disconnect → broadcast online/offline
+│   └── events.ts              # константи назв подій ("message:new", "presence:update" тощо)
+│
+├── shared/
+│   ├── errors/               # кастомні класи помилок (NotFoundError, ForbiddenError)
+│   └── middleware/
+│       └── errorHandler.ts   # єдиний обробник помилок для Express
+│
+├── app.ts                    # збірка Express-застосунку (middleware, роути модулів)
+└── server.ts                 # створення http-сервера, підключення socket.io, .listen()
