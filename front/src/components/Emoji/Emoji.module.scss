@@ -1,0 +1,10 @@
+.emoji {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: -0.2em;
+}
+
+.emoji img {
+    width: var(--emoji-size, 16px);
+    height: var(--emoji-size, 16px);
+}

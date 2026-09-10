@@ -1,4 +1,5 @@
 import type {NextFunction, Response, Request} from "express";
+import {env} from "../../config/env.js";
 
 export class AppError extends Error{
     public statusCode: number;
@@ -24,6 +25,6 @@ export function ErrorHandler (error: AppError | Error, req: Request, res: Respon
 
     res.status(statusCode).json({
         message,
-        ...(process.env.NODE_ENV === 'development' && { stack: error.stack }),
+        ...(env.NODE_ENV === 'dev' && { stack: error.stack }),
     })
 }

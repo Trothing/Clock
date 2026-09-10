@@ -1,0 +1,31 @@
+.rail {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 0;
+    background: var(--color-bg);
+    border-right: 1px solid var(--color-border);
+}
+
+.railSpacer {
+    flex: 1;
+}
+
+.chatSide {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-panel);
+    min-height: 0;
+}
+
+.chatSideHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 10px;
+}
+
+.searchBar {
+    padding: 0 12px 10px;
+}

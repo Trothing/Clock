@@ -1,0 +1,145 @@
+@use '../../styles/mixins';
+
+.body {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.searchWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    color: var(--color-text-secondary);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 34px 10px 36px;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.searchInput::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.searchInput:focus {
+    border-color: var(--color-accent);
+}
+
+.clearButton {
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-surface-hover);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+}
+
+.clearButton:hover {
+    color: var(--color-text);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.state,
+.empty {
+    padding: 20px 4px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-2);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.row:hover {
+    background: var(--color-surface-hover);
+}
+
+.row:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.row[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+}
+
+.avatar {
+    @include mixins.avatar-circle(38px, 13px);
+}
+
+.info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.username {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.removeButton {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.removeButton:hover {
+    background: var(--color-danger-soft);
+    color: var(--color-danger);
+}

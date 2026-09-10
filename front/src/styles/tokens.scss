@@ -1,0 +1,65 @@
+:root {
+    --color-bg: #000000;
+    --color-surface-rail: #000000;
+    --color-surface: #0A0A0A;
+    --color-surface-raised: #141414;
+    --color-surface-hover: #1E1E1E;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-overlay-subtle: rgba(255, 255, 255, 0.08);
+
+    --bubble-incoming: #161616;
+    --bubble-incoming-hover: #1E1E1E;
+    --bubble-outgoing: #26374A;
+    --bubble-outgoing-hover: #304459;
+
+    --color-accent: #5E86AD;
+    --color-accent-hover: #6F95BA;
+    --color-accent-soft: rgba(94, 134, 173, 0.14);
+
+    --color-text: #F0F0F0;
+    --color-text-secondary: #8A8A8A;
+    --color-text-meta: rgba(240, 240, 240, 0.55);
+    --color-text-bubble-out: #F2F5F8;
+    --color-text-bubble-out-meta: rgba(242, 245, 248, 0.7);
+    --color-sender-name: #8FAECB;
+    --color-danger: #D1483F;
+    --color-danger-soft: color-mix(in srgb, var(--color-danger) 14%, transparent);
+    --color-danger-border: color-mix(in srgb, var(--color-danger) 32%, transparent);
+    --color-on-accent: #FFFFFF;
+
+    --color-online: #43B581;
+    --color-info: var(--color-accent);
+    --color-info-soft: color-mix(in srgb, var(--color-info) 14%, transparent);
+    --color-info-border: color-mix(in srgb, var(--color-info) 32%, transparent);
+
+    --color-panel: var(--color-surface);
+    --color-elevated: var(--color-surface-raised);
+    --color-input: var(--color-surface);
+
+    --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: var(--font-text);
+
+    --font-size-xs: 11px;
+    --font-size-sm: 12.5px;
+    --font-size-base: 13.5px;
+    --font-size-md: 15px;
+    --font-size-lg: 17px;
+
+    --transition-fast: 150ms ease-out;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+
+    --radius: 12px;
+    --radius-sm: 6px;
+    --radius-bubble: 16px;
+    --radius-bubble-tail: 5px;
+    --radius-input: 12px;
+
+    --accent-bar-width: 3px;
+
+    --shadow-panel: 0 8px 24px rgba(0, 0, 0, 0.4);
+}

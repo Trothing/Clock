@@ -1,0 +1,73 @@
+@use '../../styles/mixins';
+
+.body {
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.empty {
+    padding: 28px 12px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.row:hover {
+    background: var(--color-surface-hover);
+}
+
+.rowLink {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    text-decoration: none;
+    color: inherit;
+}
+
+.avatar {
+    @include mixins.avatar-circle(38px, 13px);
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.unarchiveButton {
+    flex-shrink: 0;
+    margin-right: var(--space-2);
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.unarchiveButton:hover {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+}

@@ -1,0 +1,57 @@
+@use '../../styles/mixins';
+
+.list {
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.empty {
+    padding: 28px 12px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    text-align: left;
+    transition: background-color var(--transition-fast);
+}
+
+.row:hover:not(:disabled) {
+    background: var(--color-surface-hover);
+}
+
+.row:disabled {
+    cursor: default;
+}
+
+.avatar {
+    @include mixins.avatar-circle(38px, 13px);
+}
+
+.name {
+    flex: 1;
+    min-width: 0;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sentIcon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+}

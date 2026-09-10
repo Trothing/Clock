@@ -1,0 +1,40 @@
+.chatList {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-panel);
+    min-height: 0;
+}
+
+.chatListState {
+    padding: 20px 16px;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+}
+
+.emptyState {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: 20px;
+    font-size: var(--font-size-base);
+}
+
+.chatListItems {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.sectionLabel {
+    display: block;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-secondary);
+    padding: 10px 16px 4px;
+}

@@ -1,0 +1,88 @@
+@use '../../styles/mixins';
+
+.body {
+    padding: var(--space-2) 0 var(--space-2);
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.sectionTitle {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-secondary);
+    margin-bottom: 6px;
+}
+
+.state {
+    padding: 12px 0;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.error {
+    padding: 8px 0 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-danger);
+}
+
+.selectRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: 9px 0;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+}
+
+.toggleRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 9px 0;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    transition: background-color var(--transition-fast);
+}
+
+.toggleRow:hover {
+    background: var(--color-surface-hover);
+}
+
+.toggleRow span:not(.switch):not(.switchKnob) {
+    flex: 1;
+    text-align: left;
+}
+
+.switch {
+    @include mixins.toggle-switch-track;
+}
+
+.switchOn {
+    background: var(--color-accent);
+}
+
+.switchKnob {
+    @include mixins.toggle-switch-knob;
+}
+
+.switchOn .switchKnob {
+    transform: translateX(14px);
+}

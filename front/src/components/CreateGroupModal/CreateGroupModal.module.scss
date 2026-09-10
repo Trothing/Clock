@@ -1,0 +1,121 @@
+@use '../../styles/mixins';
+
+.form {
+    padding: 18px 20px 20px;
+}
+
+.avatarField {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatarPickButton {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px dashed var(--color-border);
+    background: var(--color-surface-raised);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.avatarPickButton:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.avatarPreview {
+    @include mixins.avatar-circle(100%, 16px);
+}
+
+.hiddenFileInput {
+    display: none;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-elevated);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: 5px 6px 5px 10px;
+    border-radius: 999px;
+}
+
+.chipRemove {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-overlay-subtle);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.chipRemove:hover {
+    background: var(--color-danger);
+    color: var(--color-on-accent);
+}
+
+.searchResults {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 180px;
+    overflow-y: auto;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+}
+
+.searchResultRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    text-align: left;
+    transition: background-color var(--transition-fast);
+}
+
+.searchResultRow:hover {
+    background: var(--color-elevated);
+}
+
+.searchResultAvatar {
+    @include mixins.avatar-circle(26px, 11px);
+}
+
+.searchResultName {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.searchResultUsername {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}

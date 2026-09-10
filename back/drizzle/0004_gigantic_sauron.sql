@@ -1,0 +1,1 @@
+ALTER TABLE "privacy_settings" ADD COLUMN "read_receipts_enabled" boolean DEFAULT true NOT NULL;

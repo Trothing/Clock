@@ -52,3 +52,15 @@ export async function logout (req: Request, res: Response) {
     res.clearCookie('refreshToken', { path: '/auth/refresh' })
     res.status(204).send()
 }
+
+export async function refresh(req: Request, res: Response){
+    const refreshToken = req.cookies?.refreshToken as string | undefined
+    if (!refreshToken) {
+        throw new AppError('Unauthorized', 401)
+    }
+    const { accessToken, refreshToken: newRefreshToken, user } = await authService.refresh(refreshToken)
+
+    res.cookie('refreshToken', newRefreshToken, REFRESH_COOKIE_OPTIONS)
+
+    res.status(200).json({accessToken, user: convertUserToPublic(user)})
+}

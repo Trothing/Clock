@@ -1,0 +1,32 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+}
+
+.state {
+    padding: 20px 16px;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+}
+
+.empty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+    padding: 20px;
+}
+
+.empty p {
+    margin: 0;
+}
+
+.items {
+    overflow-y: auto;
+    flex: 1;
+    padding-top: 4px;
+}

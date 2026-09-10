@@ -30,3 +30,8 @@ pnpm-debug.log*
 .idea/
 .DS_Store
 Thumbs.db
+
+back.txt
+front.txr
+
+back/uploads/

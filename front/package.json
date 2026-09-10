@@ -10,19 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.23",
     "@tanstack/react-query": "^5.102.8",
+    "@tanstack/react-virtual": "^3.14.11",
     "axios": "^1.20.0",
+    "lucide-react": "^1.39.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.3",
+    "socket.io-client": "^4.8.3",
+    "twemoji": "^14.0.2",
+    "zod": "^4.5.4",
     "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "@types/socket.io-client": "^1.4.36",
+    "@types/twemoji": "^13.1.1",
     "@vitejs/plugin-react": "^6.1.0",
     "oxlint": "^1.79.0",
+    "sass": "^1.103.1",
     "typescript": "~6.0.2",
     "vite": "^8.2.2"
   }

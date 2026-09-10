@@ -1,0 +1,141 @@
+.chatList {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    background: var(--color-panel);
+    min-height: 0;
+}
+
+.chatListHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 10px;
+}
+
+.chatListHeader span {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+}
+
+.ruler {
+    height: 1px;
+    margin: 0 16px 10px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(237, 237, 242, 0.12) 0px,
+        rgba(237, 237, 242, 0.12) 5px,
+        transparent 5px,
+        transparent 9px
+    );
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.newChatButton {
+    width: 30px;
+    height: 30px;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.newChatButton:hover {
+    opacity: 0.85;
+}
+
+.filterTabs {
+    display: flex;
+    gap: 4px;
+    padding: 0 12px 10px;
+    overflow-x: auto;
+}
+
+.filterTab {
+    flex-shrink: 0;
+    border: none;
+    background: var(--color-surface-raised);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.filterTab:hover {
+    color: var(--color-text);
+}
+
+.filterTabActive {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+}
+
+.searchWrapper {
+    position: relative;
+    padding: 0 12px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 24px;
+    color: var(--color-text-secondary);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px 8px 34px;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.searchInput::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.searchInput:focus {
+    border-color: var(--color-accent);
+}
+
+.clearSearchButton {
+    position: absolute;
+    right: 22px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-elevated);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+}
+
+.clearSearchButton:hover {
+    color: var(--color-text);
+}

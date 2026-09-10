@@ -1,0 +1,39 @@
+.layout {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--color-bg);
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 30px 28px;
+}
+
+.brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--color-text);
+    margin-bottom: 14px;
+}
+
+.ruler {
+    height: 1px;
+    margin-bottom: 20px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(237, 237, 242, 0.12) 0px,
+        rgba(237, 237, 242, 0.12) 5px,
+        transparent 5px,
+        transparent 9px
+    );
+}

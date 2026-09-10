@@ -1,0 +1,81 @@
+@use '../../styles/mixins';
+
+.wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.trigger:hover:not(:disabled) {
+    border-color: var(--color-text-secondary);
+}
+
+.trigger:focus-visible {
+    border-color: var(--color-accent);
+}
+
+.trigger:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.chevron {
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+}
+
+.dropdown {
+    @include mixins.dropdown-panel;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 160px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    z-index: 21;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    text-align: left;
+    transition: background-color var(--transition-fast);
+}
+
+.item:hover {
+    background: var(--color-surface-hover);
+}
+
+.checkIcon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+}

@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 16px;
+    flex-shrink: 0;
+}
+
+.text {
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-text-secondary);
+    animation: bounce 1.2s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 150ms;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 300ms;
+}
+
+@keyframes bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    30% {
+        transform: translateY(-3px);
+        opacity: 1;
+    }
+}

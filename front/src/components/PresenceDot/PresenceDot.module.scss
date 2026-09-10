@@ -1,0 +1,13 @@
+.dot {
+    flex-shrink: 0;
+    display: block;
+    border-radius: 50%;
+}
+
+.online {
+    background: var(--color-online);
+}
+
+.offline {
+    background: var(--color-text-secondary);
+}

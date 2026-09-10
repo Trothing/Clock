@@ -8,6 +8,6 @@ export const jwtTable = pgTable('jwt', {
         onDelete: 'cascade'
     }),
     expiresAt: timestamp().notNull(),
-    revokedAt: timestamp('revoked_at'),
     createdAt: timestamp().defaultNow().notNull(),
+    usedAt: timestamp('used_at'),
 })
